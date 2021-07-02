@@ -1,9 +1,10 @@
 import React from "react";
 
 const style = {
-	background: "lightblue",
-	border: "2px solid darkblue",
-	fontSize: "30px",
+	background: "purple",
+  border: "2px solid pink",
+  color: "white",
+	fontSize: "40px",
 	fontWeight: "800",
 	cursor: "pointer",
 	outline: "none",

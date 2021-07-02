@@ -9,6 +9,17 @@ const style = {
   margin: "20px auto",
 };
 
+const buttonStyle = {
+   display:"inline-block",
+   padding:"0.3em 1.2em",
+   margin:"0 0.1em 0.1em 0",
+   border:"0.16em solid rgba(255,255,255,0)",
+   borderRadius:"2em",
+   boxSizing: "border-box",
+   textDecoration:"none",
+   fontFamily:'Roboto',
+  }
+
 const Game = () => {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [player1Turn, setPlayer1Turn] = useState(true);
@@ -31,7 +42,7 @@ const Game = () => {
   };
 
   const renderMoves = () => (
-    <button onClick={() => setBoard(Array(9).fill(null))}>
+    <button style={buttonStyle} onClick={() => setBoard(Array(9).fill(null))}>
       Start New Game
     </button>
   );
@@ -42,12 +53,12 @@ const Game = () => {
         <p>
           {winner ? "Winner: " + winner : (player1Turn ? "X" : "O") + "'s Turn"}
         </p>
-          {winner ? (<button onClick={() => postGameStats(winner, board)}>Post Winner</button>): null}
+          {winner ? (<button style={buttonStyle} onClick={() => postGameStats(winner, board)}>Post Winner</button>): null}
         {renderMoves()}
       </div>
       <Board boxes={board} onClick={handleClick} />;
       <div style={style}>
-        <button onClick={() => handleGetStats()}>Get Game Stats</button>
+        <button style={buttonStyle} onClick={() => handleGetStats()}>Get Game Stats</button>
         <GameStats gameStats={gameStats} />
       </div>
     </div>
